@@ -25,6 +25,9 @@ jobs:
       - name: Build project
         run: dotnet build --no-restore
 
+      - name: Install Playwright CLI
+        run: dotnet tool install --global Microsoft.Playwright.CLI
+
       - name: Install Playwright Browsers
         run: playwright install
 
