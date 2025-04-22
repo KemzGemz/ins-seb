@@ -26,7 +26,7 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Install Playwright Browsers
-        run: pwsh bin/Debug/net8.0/playwright.ps1 install chromium
+        run: pwsh bin/Debug/netX/playwright.ps1 install chromium
 
       - name: Run tests and generate report
         run: dotnet test --no-build
