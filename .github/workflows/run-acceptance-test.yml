@@ -16,11 +16,17 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Change Working Directory
+        run: cd acceptant-test-playwright
+        
       - name: Restore dependencies
         run: dotnet restore
 
       - name: Build project
         run: dotnet build --no-restore
+
+      - name: Install Playwright Browsers
+        run: pwsh bin/Debug/net8.0/playwright.ps1 install chromium
 
       - name: Run tests and generate report
         run: dotnet test --no-build
