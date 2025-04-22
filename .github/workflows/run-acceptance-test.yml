@@ -26,8 +26,7 @@ jobs:
         run: dotnet test --no-build
 
       - name: Upload Extent Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: ExtentReport
-          path: |
-            **/TestResults/ExtentReport.html
+          path: '**/TestResults/ExtentReport.html'
