@@ -1,13 +1,11 @@
-name: Run Playwright + SpecFlow Tests
+name: 'Run Acceptance Test'
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repo
