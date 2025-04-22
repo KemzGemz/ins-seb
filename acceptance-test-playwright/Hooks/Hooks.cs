@@ -17,7 +17,7 @@ public class Hooks
     public async Task BeforeScenarioAsync()
     {
         var playwright = await Playwright.CreateAsync();
-        var browser = await playwright.Chromium.LaunchAsync(new() { Headless = false, SlowMo = 100});
+        var browser = await playwright.Chromium.LaunchAsync(new() { Headless = true, SlowMo = 100});
         var context = await browser.NewContextAsync(new () {ViewportSize = new ViewportSize() { Width = 1920, Height = 1080 }});
         var page = await context.NewPageAsync();
 
